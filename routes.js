@@ -31,8 +31,7 @@ module.exports = function(app) {
         // if id, return 404
         if(result){
 
-          const renderedData = pug.renderFile('./pugTemplates/404.pug')
-          return res.status(404).send(renderedData)
+          return res.status(404).send(pug.renderFile('./pugTemplates/404.pug'))
 
         } else {
 
