@@ -1,0 +1,25 @@
+{
+  "name": "oneshotpage",
+  "version": "1.0.0",
+  "description": "one-time urls",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js",
+    "dev": "NODE_ENV=development node --inspect index.js"
+  },
+  "author": "Matt Lovan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "helmet": "^3.11.0",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.4",
+    "morgan": "^1.9.0",
+    "pug": "^2.0.0-rc.4"
+  }
+}

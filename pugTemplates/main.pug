@@ -1,0 +1,71 @@
+html
+
+  head
+
+  meta(name='viewport', content='width=device-width')
+
+  style(type="text/css").
+    .numbers {
+      word-wrap: break-word;
+      position: fixed;
+      top: 0;
+      max-width: 100%;
+      color: lightslategray;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    html,
+    body,
+    .flex-container{
+      min-height: 100%;
+      margin: 0;
+    }
+    .flex-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .flex-child{
+      max-width: 80%;
+    }
+
+    .message{
+      border: solid 2px grey;
+      background: white;
+      padding: 1em;
+    }
+
+    code{
+      border: solid 1px grey;
+      padding: 0.5em;
+      display: block;
+    }
+
+    @media(min-width: 960px){
+      .flex-child{
+        max-width: 50%;
+      }
+
+      code{
+        display: inline;
+      }
+    }
+
+
+  body
+
+    div(class='numbers') #{bytes}
+
+    div(class='flex-container')
+      div(class='flex-child')
+        div(class='message')
+          h1 Hellos, I am *your* webpage.
+          p My name is
+            strong &nbsp;#{path}&nbsp;
+            |and I was born today. I am unique! I have never been seen before! But after you leave this page no one will never see me again.
+          p Links to me will return: &nbsp;
+            code 404 (page not found)
+          p Reloading the page will return: &nbsp;
+            code 404 (page not found)
+          p Once you leave I will be gone... forever.
