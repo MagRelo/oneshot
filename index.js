@@ -10,8 +10,6 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 
-// var config = require('./config/environment');
-
 // Connect to database
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;

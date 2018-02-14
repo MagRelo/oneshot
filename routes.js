@@ -14,27 +14,26 @@ module.exports = function(app) {
   // Moving URL
   app.get('/:path', (req, res) => {
 
-    // check for valid path
+    // get path param
     const path = req.params.path
-    const birthday = new Date()
 
     // hash path
     const hash = crypto.createHash('sha256');
-    let digest
     hash.update(path);
-    digest = hash.digest('hex')
+    let digest = hash.digest('hex')
 
     // check for hash in mongo
     PageSchema.findOne({digest: digest})
       .then(result => {
 
-        // if id, return 404
+        // if page exists return 404
         if(result){
 
           return res.status(404).send(pug.renderFile('./pugTemplates/404.pug'))
 
         } else {
 
+          const birthday = new Date()
           const data = {
             path: path,
             digest: digest,
@@ -58,7 +57,7 @@ module.exports = function(app) {
 
   })
 
-  // All other routes should redirect to the index.html
+  // All other routes should 404
   app.get('/*', function(req, res){
     res.status(404).send(pug.renderFile('./pugTemplates/404.pug'))
   });
