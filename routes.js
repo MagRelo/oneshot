@@ -40,7 +40,7 @@ module.exports = function(app) {
             digest: digest,
             birthDate: birthday,
             birthday: birthday.toString(),
-            bytes: crypto.randomBytes(1024*6).toString('hex'),
+            bytes: crypto.randomBytes(1024*10).toString('hex'),
           }
 
           const page = new PageSchema(data)
