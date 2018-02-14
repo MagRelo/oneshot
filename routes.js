@@ -7,7 +7,7 @@ const PageSchema = require('./models/page')
 module.exports = function(app) {
 
   app.get('/', function(req, res){
-    const newPage = crypto.randomBytes(16).toString('hex')
+    const newPage = crypto.randomBytes(8).toString('hex')
     return res.redirect(307, '/' + newPage);
   });
 
